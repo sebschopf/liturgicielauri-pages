@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiturgiCielauri — Station de travail liturgique moderne</title>
+    <meta name="description" content="Application desktop open-source pour la gestion, l'édition et la méditation de textes liturgiques. Local-first, multi-plateforme.">
+    <style>
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #1e3d6e;
+            --accent: #4a8fd4;
+            --bg: #f8f9fa;
+            --text: #333;
+            --text-light: #666;
+            --white: #fff;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .subtitle { font-size: 1.2rem; opacity: 0.9; }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        section { margin-bottom: 3rem; }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-badge {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover { background: var(--secondary); }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+        
+        .stat {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .stat-label { color: var(--text-light); font-size: 0.9rem; }
+        
+        .principles {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .principle {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .principle-icon {
+            font-size: 1.5rem;
+            min-width: 40px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .subtitle { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>⛪ LiturgiCielauri</h1>
+        <p class="subtitle">Libérer, Préserver, Partager le patrimoine liturgique</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">Station de travail liturgique moderne, premium et 100% hors-ligne</p>
+    </header>
+    
+    <div class="container">
+        <!-- Mission -->
+        <section>
+            <h2>🎯 Notre Mission</h2>
+            <p>
+                <strong>LiturgiCielauri</strong> est la renaissance moderne de LiturgiCiel 2010. 
+                Nous transformons une base de données historique, autrefois enfermée dans une technologie 
+                propriétaire obsolète (FileMaker 10), en une plateforme logicielle moderne, performante, 
+                accessible et pérenne.
+            </p>
+            <p style="margin-top: 1rem;">
+                Notre mission : fournir aux professionnels et aux passionnés un outil de gestion éditoriale 
+                de haute fidélité, capable de manipuler des milliers de fiches complexes avec fluidité, 
+                <strong>quel que soit leur système d'exploitation</strong>.
+            </p>
+        </section>
+        
+        <!-- Statistiques -->
+        <section>
+            <h2>📊 État du Projet</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">75+</div>
+                    <div class="stat-label">ADR Documentés</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">51</div>
+                    <div class="stat-label">Tests Passés</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">3/5</div>
+                    <div class="stat-label">Phases Terminées</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10 Mo</div>
+                    <div class="stat-label">Taille App</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Fonctionnalités -->
+        <section>
+            <h2>✨ Fonctionnalités Clés</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <h3>Mode Livre</h3>
+                    <p>Consultation immersive du corpus liturgique. Navigation canonique et mise en page adaptative.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Recherche Avancée</h3>
+                    <p>Barre de commande Ctrl+K pour chercher instantanément texte, versets ou thématiques.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Éditeur Rich</h3>
+                    <p>Éditeur ProseMirror pour créer et modifier des fiches liturgiques. Workflow brouillons → validation.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎭</div>
+                    <h3>Déroulés de Culte</h3>
+                    <p>Assemblage de fiches pour créer le fil conducteur d'une célébration complète.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Multi-Langues</h3>
+                    <p>Structure prête pour FR/DE/EN. Recherche et tri par langue.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📄</div>
+                    <h3>Export PDF</h3>
+                    <p>Génération de livrets de célébration PDF haute fidélité pour l'impression.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Principes -->
+        <section>
+            <h2>🏛️ Nos Principes</h2>
+            <div class="principles">
+                <div class="principle">
+                    <div class="principle-icon">💾</div>
+                    <div>
+                        <strong>Local-First</strong><br>
+                        Vos données restent sur votre ordinateur. Fonctionne hors-ligne, pas de dépendance cloud.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div class="principle-icon">🔒</div>
+                    <div>
+                        <strong>Zéro Verrouillage</strong><br>
+                        Vos données vous appartiennent. Format ouvert, exportable, aucune captivité.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div class="principle-icon">🌟</div>
+                    <div>
+                        <strong>Accessibilité</strong><br>
+                        Interface moderne, intuitive, multi-plateforme. WCAG AAA compliant.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div class="principle-icon">🎯</div>
+                    <div>
+                        <strong>Haute Fidélité</strong><br>
+                        Extraction et préservation intégrales du patrimoine liturgique original.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stack Technique -->
+        <section>
+            <h2>⚙️ Stack Technique</h2>
+            <p>Technologies de pointe pour garantir performances et pérennité :</p>
+            <div class="tech-stack" style="margin-top: 1rem;">
+                <span class="tech-badge">Rust + Tauri 2.0</span>
+                <span class="tech-badge">Svelte 5 + Runes</span>
+                <span class="tech-badge">SurrealDB Sidecar</span>
+                <span class="tech-badge">ProseMirror</span>
+                <span class="tech-badge">AGPL v3</span>
+            </div>
+            <p style="margin-top: 1rem; color: var(--text-light);">
+                Architecture SOLID, 51 tests unitaires, 0 erreur de lint. Validation complète via CI/CD.
+            </p>
+        </section>
+        
+        <!-- Call to Action -->
+        <section>
+            <h2>🚀 Rejoignez le Projet</h2>
+            <p style="margin-bottom: 1.5rem;">
+                LiturgiCielauri est un projet <strong>open-source</strong> sous licence AGPL v3. 
+                Contributions et commentaires sont les bienvenus !
+            </p>
+            <div class="links">
+                <a href="https://gitea.ch/" class="btn" target="_blank">🔧 Code Source</a>
+                <a href="/Documentation/presentation/DOSSIER-PROMOTION.pdf" class="btn btn-outline">📋 Dossier PDF</a>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>
+            © 2026 LiturgiCielauri — Station de travail liturgique moderne<br>
+            <a href="mailto:contact@liturgicielauri.ch">contact@liturgicielauri.ch</a>
+        </p>
+    </footer>
+</body>
+</html>

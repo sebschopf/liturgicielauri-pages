@@ -1,0 +1,10 @@
+{
+  "name": "liturgicielauri-pages",
+  "version": "1.0.0",
+  "description": "LiturgiCielauri site vitrine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
