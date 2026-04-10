@@ -8,39 +8,31 @@
     <link rel="stylesheet" href="app.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2v20M2 12h20'/></svg>">
     <script>
-        // Email obfuscation anti-spam
+        // Email obfuscation - simply use CSS to hide the link text, and build the mailto link dynamically
         document.addEventListener('DOMContentLoaded', function() {
-            // ROT13 decode + reverse for email address
-            function decodeEmail(encoded) {
-                return encoded.split('').map(function(c) {
-                    if (c >= 'a' && c <= 'z') {
-                        return String.fromCharCode(((c.charCodeAt(0) - 97 + 13) % 26) + 97);
-                    } else if (c >= 'A' && c <= 'Z') {
-                        return String.fromCharCode(((c.charCodeAt(0) - 65 + 13) % 26) + 65);
-                    }
-                    return c;
-                }).reverse().join('');
+            var u = "contact";
+            var d = "liturgicielauri.ch";
+            var link = document.getElementById('contact-link');
+            if (link) {
+                link.href = 'mailto:' + u + '@' + d;
+                link.textContent = u + '@' + d;
             }
-            
-            // Decode and replace all obfuscated emails
-            document.querySelectorAll('[data-email]').forEach(function(el) {
-                var parts = el.dataset.email.split('|');
-                var user = decodeEmail(parts[0]);
-                var domain = decodeEmail(parts[1]);
-                el.href = 'mailto:' + user + '@' + domain;
-                el.textContent = user + '@' + domain;
-            });
         });
     </script>
+    <style>
+        /* Only show the contact link if JS is enabled, otherwise hide it entirely or show static text */
+        #contact-link { display: none; }
+        .js-enabled #contact-link { display: inline; }
+    </style>
 </head>
-<body>
+<body class="no-js" onload="document.body.className='js-enabled'">
     <header>
         <h1>LiturgiCielauri</h1>
         <p class="subtitle">Libérer, Préserver, Partager le patrimoine liturgique</p>
         <p style="margin-top: 1rem; opacity: 0.8;">Station de travail liturgique moderne, premium et 100% hors-ligne</p>
     </header>
     
-    <div class="container">
+    <main class="container">
         <!-- Mission -->
         <section>
             <h2>Notre Mission</h2>
@@ -179,7 +171,7 @@
     <footer>
         <p>
             &copy; 2026 LiturgiCielauri &mdash; Logiciel de travail liturgique moderne<br>
-            <a href="#" data-email="rupngab|up.helenynpvtighlyv">Antispam</a>
+            <a id="contact-link" href="#">Contact</a>
         </p>
     </footer>
 </body>
