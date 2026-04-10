@@ -22,19 +22,20 @@ jobs:
           script: |
             cd /srv/customer/sites/liturgicielauri.moustik.site
             
-            # 1. On s'assure que le dossier est bien un dépôt git (sécurité)
+            # 1. On nettoie tout sauf le dossier .git s'il existe
+            # Si ce n'est pas un dépôt git, on vide tout pour cloner proprement
             if [ ! -d ".git" ]; then
+              echo "Initialisation du dépôt..."
+              rm -rf *
               git clone https://github.com/sebschopf/liturgicielauri-pages.git .
+            else
+              echo "Mise à jour du dépôt existant..."
+              git fetch origin main
+              git reset --hard origin/main
             fi
             
-            # 2. On récupère les dernières modifications
-            git fetch origin main
-            git reset --hard origin/main
-            
-            # 3. On installe les dépendances (si nécessaire)
-            npm install --production
-            
-            # 4. On force le redémarrage de l'instance Node.js
+            # 2. Installation et Redémarrage
+            npm install --omit=dev
             touch index.js
             
-            echo "Déploiement terminé avec succès sur Infomaniak !"
+            echo "Déploiement terminé !"
