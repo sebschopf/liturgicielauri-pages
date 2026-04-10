@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
           source: "./*, !.git, !.github"
-          target: "sites/liturgicielauri.moustik.site"
+          target: "/srv/customer/sites/liturgicielauri.moustik.site"
           strip_components: 0
           timeout: 5m
           command_timeout: 30m
