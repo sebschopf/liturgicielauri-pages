@@ -136,15 +136,15 @@ section h2 {
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 0;
+    gap: var(--border-width);
+    background: var(--border);
+    border: var(--border-width) solid var(--border);
 }
 
 .feature {
-    border: var(--border-width) solid var(--border);
+    border: 0;
     padding: var(--space-lg);
-    margin: calc(var(--border-width) * -1);
-    margin-right: 0;
-    margin-bottom: calc(var(--border-width) * -1);
+    background: var(--surface);
 }
 
 .feature:nth-child(odd) {

@@ -7,6 +7,31 @@
     <meta name="description" content="Application desktop open-source pour la gestion, l'edition et la meditation de textes liturgiques. Local-first, multi-plateforme.">
     <link rel="stylesheet" href="app.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 2v20M2 12h20'/></svg>">
+    <script>
+        // Email obfuscation anti-spam
+        document.addEventListener('DOMContentLoaded', function() {
+            // ROT13 decode + reverse for email address
+            function decodeEmail(encoded) {
+                return encoded.split('').map(function(c) {
+                    if (c >= 'a' && c <= 'z') {
+                        return String.fromCharCode(((c.charCodeAt(0) - 97 + 13) % 26) + 97);
+                    } else if (c >= 'A' && c <= 'Z') {
+                        return String.fromCharCode(((c.charCodeAt(0) - 65 + 13) % 26) + 65);
+                    }
+                    return c;
+                }).reverse().join('');
+            }
+            
+            // Decode and replace all obfuscated emails
+            document.querySelectorAll('[data-email]').forEach(function(el) {
+                var parts = el.dataset.email.split('|');
+                var user = decodeEmail(parts[0]);
+                var domain = decodeEmail(parts[1]);
+                el.href = 'mailto:' + user + '@' + domain;
+                el.textContent = user + '@' + domain;
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -153,8 +178,8 @@
     
     <footer>
         <p>
-            &copy; 2026 LiturgiCielauri &mdash; Station de travail liturgique moderne<br>
-            <a href="mailto:contact@liturgicielauri.ch">contact@liturgicielauri.ch</a>
+            &copy; 2026 LiturgiCielauri &mdash; Logiciel de travail liturgique moderne<br>
+            <a href="#" data-email="rupngab|up.helenynpvtighlyv">Antispam</a>
         </p>
     </footer>
 </body>
