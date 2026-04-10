@@ -43,3 +43,5 @@ jobs:
             
             touch index.js
             echo "Succès !"
+            # On force une sortie propre pour éviter le signal 141
+            exit 0
