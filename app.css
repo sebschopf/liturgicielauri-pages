@@ -74,14 +74,38 @@ body {
     background: var(--background);
 }
 
-/* ─── Header Brutaliste ─────────────────────────────────────────── */
-header {
-    background: var(--foreground);
-    color: var(--background);
-    padding: var(--space-xl) var(--space-md);
-    border-bottom: var(--border-width) solid var(--border);
-    text-align: center;
-}
+    /* ─── Header Brutaliste ─────────────────────────────────────────── */
+    header {
+        background: var(--foreground);
+        color: var(--background);
+        padding: var(--space-xl) var(--space-md);
+        border-bottom: var(--border-width) solid var(--border);
+        text-align: center;
+    }
+
+    /* ─── Navigation Brutaliste ─────────────────────────────────────── */
+    .main-nav {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-md);
+        padding: var(--space-md);
+        background: var(--surface);
+        border-bottom: var(--border-width) solid var(--border);
+    }
+
+    .main-nav a {
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--foreground);
+        text-decoration: none;
+        padding: var(--space-sm) var(--space-md);
+        border: var(--border-width) solid transparent;
+    }
+
+    .main-nav a:hover {
+        border-color: var(--border);
+        background: var(--background);
+    }
 
 header h1 {
     font-family: var(--font-heading);
