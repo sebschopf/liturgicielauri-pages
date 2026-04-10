@@ -20,7 +20,9 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           source: "./*"
           target: "~/sites/liturgicielauri.moustik.site/"
-          rm: true # Nettoie le dossier avant l'envoi
+          timeout: 5m
+          command_timeout: 30m
+          rm: true
 
       - name: Restart Node instance
         uses: appleboy/ssh-action@v1.0.3
