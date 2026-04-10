@@ -18,24 +18,28 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          # On se connecte et on exécute les commandes directement sur le serveur
+          # On augmente le timeout au cas où le réseau Infomaniak soit lent
+          command_timeout: 10m
           script: |
             cd /srv/customer/sites/liturgicielauri.moustik.site
             
-            # 1. On nettoie tout sauf le dossier .git s'il existe
-            # Si ce n'est pas un dépôt git, on vide tout pour cloner proprement
+            # On configure Git pour éviter les messages d'avertissement inutiles
+            git config --global core.quotepath false
+            
             if [ ! -d ".git" ]; then
-              echo "Initialisation du dépôt..."
-              rm -rf *
-              git clone https://github.com/sebschopf/liturgicielauri-pages.git .
+              echo "Nettoyage et clonage tout neuf..."
+              # On vide tout y compris les fichiers cachés, sauf . (lui-même) et .. (parent)
+              find . -maxdepth 1 ! -name "." ! -name ".." -exec rm -rf {} +
+              # Le secret est ici : --quiet pour éviter l'erreur 141
+              git clone --quiet https://github.com/sebschopf/liturgicielauri-pages.git .
             else
-              echo "Mise à jour du dépôt existant..."
-              git fetch origin main
-              git reset --hard origin/main
+              echo "Mise à jour légère..."
+              git fetch --quiet origin main
+              git reset --hard --quiet origin/main
             fi
             
-            # 2. Installation et Redémarrage
-            npm install --omit=dev
-            touch index.js
+            # On installe sans bavardage
+            npm install --omit=dev --no-audit --no-fund --quiet
             
-            echo "Déploiement terminé !"
+            touch index.js
+            echo "Succès !"
