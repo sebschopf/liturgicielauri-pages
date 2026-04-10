@@ -18,11 +18,11 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          source: "./*"
-          target: "~/sites/liturgicielauri.moustik.site/"
+          source: "./*, !.git, !.github"
+          target: "sites/liturgicielauri.moustik.site"
+          strip_components: 0
           timeout: 5m
           command_timeout: 30m
-          rm: true
 
       - name: Restart Node instance
         uses: appleboy/ssh-action@v1.0.3
@@ -33,4 +33,4 @@ jobs:
           script: |
             cd ~/sites/liturgicielauri.moustik.site
             npm install --production
-            touch index.js # Force le redémarrage de l'instance
+            touch index.js
