@@ -43,7 +43,7 @@
                 accessible et pérenne.
             </p>
             <p style="margin-top: 1rem;">
-                Notre mission : fournir aux professionnels et aux passionnés un outil de gestion éditoriale 
+                Notre mission : fournir aux professionnel·les et aux passionné·es un outil de gestion éditoriale 
                 de haute fidélité, capable de manipuler des milliers de fiches complexes avec fluidité, 
                 <strong>quel que soit leur système d'exploitation</strong>.
             </p>
@@ -62,7 +62,7 @@
                     <div class="stat-label">Tests Passés</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-number">3/5</div>
+                    <div class="stat-number">3/6</div>
                     <div class="stat-label">Phases Terminées</div>
                 </div>
                 <div class="stat">
@@ -77,28 +77,94 @@
             <h2>Fonctionnalités Clés</h2>
             <div class="features">
                 <div class="feature">
-                    <h3>Mode Livre</h3>
-                    <p>Consultation immersive du corpus liturgique. Navigation canonique et mise en page adaptative.</p>
+                    <input type="checkbox" id="modal-1" class="modal-toggle">
+                    <label for="modal-1" class="feature-label">
+                        <h3>Mode Livre</h3>
+                        <p>Consultation immersive du corpus liturgique. Navigation canonique et mise en page adaptative.</p>
+                        <span class="btn-view">VOIR</span>
+                    </label>
+                    <div class="modal">
+                        <label for="modal-1" class="modal-overlay"></label>
+                        <div class="modal-content">
+                            <label for="modal-1" class="modal-close">&times;</label>
+                            <img src="images/LiturgiCielauri-lecture.png" alt="Mode Livre">
+                        </div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>Recherche Avancée</h3>
-                    <p>Barre de commande Ctrl+K pour chercher instantanément texte, versets ou thématiques.</p>
+                    <input type="checkbox" id="modal-2" class="modal-toggle">
+                    <label for="modal-2" class="feature-label">
+                        <h3>Recherche Avancée</h3>
+                        <p>Barre de commande Ctrl+K pour chercher instantanément texte, versets ou thématiques.</p>
+                        <span class="btn-view">VOIR</span>
+                    </label>
+                    <div class="modal">
+                        <label for="modal-2" class="modal-overlay"></label>
+                        <div class="modal-content">
+                            <label for="modal-2" class="modal-close">&times;</label>
+                            <img src="images/LiturgiCielauri-recherche.png" alt="Recherche Avancée">
+                        </div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>Éditeur Rich</h3>
-                    <p>Éditeur ProseMirror pour créer et modifier des fiches liturgiques. Workflow brouillons validation.</p>
+                    <input type="checkbox" id="modal-3" class="modal-toggle">
+                    <label for="modal-3" class="feature-label">
+                        <h3>Éditeur Rich</h3>
+                        <p>Éditeur ProseMirror pour créer et modifier des fiches liturgiques. Workflow brouillons validation.</p>
+                        <span class="btn-view">VOIR</span>
+                    </label>
+                    <div class="modal">
+                        <label for="modal-3" class="modal-overlay"></label>
+                        <div class="modal-content">
+                            <label for="modal-3" class="modal-close">&times;</label>
+                            <img src="images/LiturgiCielauri-nouvelle-fiche.png" alt="Éditeur Rich">
+                        </div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>Déroulés de Culte</h3>
-                    <p>Assemblage de fiches pour créer le fil conducteur d'une célébration complète.</p>
+                    <input type="checkbox" id="modal-4" class="modal-toggle">
+                    <label for="modal-4" class="feature-label">
+                        <h3>Déroulés de Culte</h3>
+                        <p>Assemblage de fiches pour créer le fil conducteur d'une célébration complète.</p>
+                        <span class="btn-view">VOIR</span>
+                    </label>
+                    <div class="modal">
+                        <label for="modal-4" class="modal-overlay"></label>
+                        <div class="modal-content">
+                            <label for="modal-4" class="modal-close">&times;</label>
+                            <img src="images/LiturgiCielauri-deroules-culte.png" alt="Déroulés de Culte">
+                        </div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>Multi-Langues</h3>
-                    <p>Structure prête pour FR/DE/EN. Recherche et tri par langue.</p>
+                    <input type="checkbox" id="modal-5" class="modal-toggle">
+                    <label for="modal-5" class="feature-label">
+                        <h3>Bibliothèque</h3>
+                        <p>Accès au corpus liturgique complet, trié et filtré par index canonique.</p>
+                        <span class="btn-view">VOIR</span>
+                    </label>
+                    <div class="modal">
+                        <label for="modal-5" class="modal-overlay"></label>
+                        <div class="modal-content">
+                            <label for="modal-5" class="modal-close">&times;</label>
+                            <img src="images/LiturgiCielauri-bibliotheque-fiche.png" alt="Bibliothèque">
+                        </div>
+                    </div>
                 </div>
                 <div class="feature">
-                    <h3>Export PDF</h3>
-                    <p>Génération de livrets de célébration PDF haute fidélité pour l'impression.</p>
+                    <input type="checkbox" id="modal-6" class="modal-toggle">
+                    <label for="modal-6" class="feature-label">
+                        <h3>Brouillons</h3>
+                        <p>Gestion des fiches en cours d'édition, avec statut de validation et partage en attente.</p>
+                        <span class="btn-view">VOIR</span>
+                    </label>
+                    <div class="modal">
+                        <label for="modal-6" class="modal-overlay"></label>
+                        <div class="modal-content">
+                            <label for="modal-6" class="modal-close">&times;</label>
+                            <img src="images/LiturgiCielauri-brouillons.png" alt="Brouillons">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,12 +216,43 @@
             </p>
         </section>
         
+        <!-- Roadmap -->
+        <section>
+            <h2>Feuille de Route</h2>
+            <div class="principles">
+                <div class="principle">
+                    <div>
+                        <strong>Phase 3 (En cours)</strong><br>
+                        Finalisation de l'éditeur riche, workflow de publication, gestion des variantes et portail d'administration.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div>
+                        <strong>Phase 4 (À venir)</strong><br>
+                        Synchronisation simplifiée : travaillez sur plusieurs postes, vos données suivent.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div>
+                        <strong>Phase 5 (À venir)</strong><br>
+                        Export PDF haute fidélité, support multi-langues et release finale.
+                    </div>
+                </div>
+                <div class="principle">
+                    <div>
+                        <strong>Phase 6 (Optionnel)</strong><br>
+                        Partage collaboratif : synchronisation des fiches sur un serveur commun pour enrichir la communauté.
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Call to Action -->
         <section>
             <h2>Rejoignez le Projet</h2>
             <p style="margin-bottom: 1.5rem;">
                 LiturgiCielauri est un projet <strong>open-source</strong> sous licence AGPL v3. 
-                Contributions et commentaires sont les bienvenus !
+                Contributions et commentaires sont les bienvenu·es !
             </p>
             <div class="links">
                 <a href="https://gitea.ch/" class="btn" target="_blank" rel="noopener noreferrer">
