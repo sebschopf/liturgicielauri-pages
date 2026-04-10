@@ -12,25 +12,29 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Copy files via SSH
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: "./*, !.git, !.github"
-          target: "/srv/customer/sites/liturgicielauri.moustik.site"
-          strip_components: 0
-          timeout: 5m
-          command_timeout: 30m
-
-      - name: Restart Node instance
+      - name: Deploy via SSH Git Pull
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
+          # On se connecte et on exécute les commandes directement sur le serveur
           script: |
-            cd ~/sites/liturgicielauri.moustik.site
+            cd /srv/customer/sites/liturgicielauri.moustik.site
+            
+            # 1. On s'assure que le dossier est bien un dépôt git (sécurité)
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/sebschopf/liturgicielauri-pages.git .
+            fi
+            
+            # 2. On récupère les dernières modifications
+            git fetch origin main
+            git reset --hard origin/main
+            
+            # 3. On installe les dépendances (si nécessaire)
             npm install --production
+            
+            # 4. On force le redémarrage de l'instance Node.js
             touch index.js
+            
+            echo "Déploiement terminé avec succès sur Infomaniak !"
