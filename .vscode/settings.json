@@ -1,0 +1,7 @@
+{
+    "yaml.schemas": {
+        "github-actions": ".github/workflows/*.yml"
+    },
+    "yaml.schemaStore.enable": false,
+    "yaml.schemaDownload.enable": false
+}

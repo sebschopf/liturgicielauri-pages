@@ -1,0 +1,370 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   LITURGICIELAURI — Brutalist CSS Theme (OKLCH)
+   ADR 042 — Système de Couleurs Dynamiques OKLCH
+   ═══════════════════════════════════════════════════════════════════════════════
+   Design brutaliste inspiré du thème liturgique.
+   Caractéristiques : bordures épaisses, typographie bold, contrastes forts.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* ─── HUES : Les Couleurs du Temps Liturgique ──────────────────── */
+    --hue-indigo: 260;
+    --hue-vert: 145;
+    --hue-violet: 300;
+    --hue-or: 45;
+    --hue-rouge: 15;
+    
+    /* ─── Teinte Sémantique (Héritage en cascade) ──────────────────── */
+    --brand-hue: var(--hue-indigo);
+    
+    /* ─── Echelles de composition OKLCH (Mode Clair) ──────────────── */
+    --l-bg: 98%;
+    --l-surface: 95%;
+    --l-text: 20%;
+    --l-primary: 45%;
+    --l-accent: 55%;
+    --l-muted: 60%;
+    
+    /* ─── Chroma (Saturation) ─────────────────────────────────────── */
+    --c-base: 0.12;
+    --c-primary: 0.18;
+    --c-accent: 0.14;
+    
+    /* ─── Bordures Brutes ──────────────────────────────────────────── */
+    --border-width: 4px;
+    --border: oklch(var(--l-text) var(--c-base) var(--brand-hue));
+    
+    /* ─── Construction OKLCH Algorithmique ──────────────────────────── */
+    --background: oklch(var(--l-bg) 0.01 var(--brand-hue));
+    --surface: oklch(var(--l-surface) 0.01 var(--brand-hue));
+    --foreground: oklch(var(--l-text) 0.02 var(--brand-hue));
+    --color-primary: oklch(var(--l-primary) var(--c-primary) var(--brand-hue));
+    --color-accent: oklch(var(--l-accent) var(--c-accent) var(--brand-hue));
+    --color-muted: oklch(var(--l-muted) 0.05 var(--brand-hue));
+    --shadow-color: oklch(var(--l-primary) 0.15 var(--brand-hue));
+    
+    /* ─── Typographie ──────────────────────────────────────────────── */
+    --font-heading: 'Helvetica Neue', Arial, sans-serif;
+    --font-body: 'Helvetica Neue', Arial, sans-serif;
+    
+    /* ─── Espacements Bruts ────────────────────────────────────────── */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+}
+
+/* ─── Reset Brutaliste ─────────────────────────────────────────────── */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.4;
+    color: var(--foreground);
+    background: var(--background);
+}
+
+/* ─── Header Brutaliste ─────────────────────────────────────────── */
+header {
+    background: var(--foreground);
+    color: var(--background);
+    padding: var(--space-xl) var(--space-md);
+    border-bottom: var(--border-width) solid var(--border);
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-md);
+    border: var(--border-width) solid var(--foreground);
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--color-accent);
+    color: var(--foreground);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: var(--space-lg);
+}
+
+/* ─── Container Brutaliste ──────────────────────────────────────────── */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+}
+
+section {
+    margin-bottom: var(--space-xl);
+    border: var(--border-width) solid var(--border);
+    padding: var(--space-lg);
+    background: var(--surface);
+}
+
+section h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: var(--foreground);
+    color: var(--background);
+    padding: var(--space-md);
+    margin: calc(var(--space-lg) * -1);
+    margin-bottom: var(--space-lg);
+    border-bottom: var(--border-width) solid var(--border);
+}
+
+/* ─── Features Brutalistes ──────────────────────────────────────────── */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0;
+}
+
+.feature {
+    border: var(--border-width) solid var(--border);
+    padding: var(--space-lg);
+    margin: calc(var(--border-width) * -1);
+    margin-right: 0;
+    margin-bottom: calc(var(--border-width) * -1);
+}
+
+.feature:nth-child(odd) {
+    background: var(--background);
+}
+
+.feature h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: var(--border-width) solid var(--border);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+/* ─── Badges Bruts ─────────────────────────────────────────────────── */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.tech-badge {
+    background: var(--foreground);
+    color: var(--background);
+    padding: var(--space-sm) var(--space-md);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--border);
+}
+
+/* ─── Boutons Bruts ────────────────────────────────────────────────── */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--foreground);
+    color: var(--background);
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: var(--border-width) solid var(--border);
+}
+
+.btn:hover {
+    background: var(--color-accent);
+    color: var(--foreground);
+}
+
+.btn:active {
+    transform: translate(4px, 4px);
+}
+
+.btn-outline {
+    background: var(--surface);
+    color: var(--foreground);
+}
+
+.btn-outline:hover {
+    background: var(--color-accent);
+    color: var(--foreground);
+}
+
+/* ─── Stats Brutalistes ─────────────────────────────────────────────── */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0;
+}
+
+.stat {
+    border: var(--border-width) solid var(--border);
+    padding: var(--space-lg);
+    text-align: center;
+    margin: calc(var(--border-width) * -1);
+    margin-right: 0;
+    margin-bottom: calc(var(--border-width) * -1);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+    margin-top: var(--space-sm);
+}
+
+/* ─── Principles Brutalistes ───────────────────────────────────────── */
+.principles {
+    background: var(--background);
+    padding: var(--space-lg);
+    border: var(--border-width) solid var(--border);
+}
+
+.principle {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border: var(--border-width) solid var(--border);
+    background: var(--surface);
+}
+
+.principle:last-child {
+    margin-bottom: 0;
+}
+
+.principle-icon {
+    font-size: 2rem;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--foreground);
+    color: var(--background);
+    padding: var(--space-md);
+}
+
+.principle div {
+    padding: var(--space-md);
+}
+
+.principle strong {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+/* ─── Footer Brutaliste ─────────────────────────────────────────────── */
+footer {
+    background: var(--foreground);
+    color: var(--background);
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+    border-top: var(--border-width) solid var(--border);
+}
+
+footer a {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ─── Responsive Brutaliste ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+        padding: var(--space-sm) var(--space-md);
+    }
+    
+    .container {
+        padding: var(--space-lg) var(--space-md);
+    }
+    
+    section {
+        padding: var(--space-md);
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+        margin: calc(var(--space-md) * -1);
+        margin-bottom: var(--space-md);
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .links {
+        flex-direction: column;
+    }
+    
+    .btn {
+        text-align: center;
+    }
+}
+
+/* ─── Animations Brutes ─────────────────────────────────────────────── */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.feature:hover {
+    background: var(--color-accent) !important;
+    color: var(--foreground);
+}

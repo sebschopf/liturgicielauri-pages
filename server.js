@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const DIST_DIR = __dirname;
 
 const MIME_TYPES = {
@@ -47,7 +47,7 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-  console.log(`Serving files from: ${DIST_DIR}`);
+// Écoute sur 0.0.0.0 comme requis par Infomaniak
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Application démarrée sur le port ${PORT}`);
 });
