@@ -161,11 +161,6 @@ section h2 {
     border-bottom: var(--border-width) solid var(--border);
 }
 
-.feature-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--space-sm);
-}
-
 /* ─── Badges Bruts ─────────────────────────────────────────────────── */
 .tech-stack {
     display: flex;
@@ -263,9 +258,6 @@ section h2 {
 }
 
 .principle {
-    display: flex;
-    align-items: stretch;
-    gap: var(--space-md);
     margin-bottom: var(--space-lg);
     border: var(--border-width) solid var(--border);
     background: var(--surface);
@@ -273,17 +265,6 @@ section h2 {
 
 .principle:last-child {
     margin-bottom: 0;
-}
-
-.principle-icon {
-    font-size: 2rem;
-    min-width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--foreground);
-    color: var(--background);
-    padding: var(--space-md);
 }
 
 .principle div {
