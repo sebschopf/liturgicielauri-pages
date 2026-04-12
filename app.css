@@ -401,7 +401,7 @@ footer a:hover {
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: oklch(15% 0.03 var(--brand-hue) / 0.92);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -448,4 +448,123 @@ footer a:hover {
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -1;
+}
+
+/* ─── Roadmap Timeline ─────────────────────────────────────────────── */
+.roadmap-timeline {
+    position: relative;
+    padding-left: 60px;
+}
+
+.roadmap-timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: var(--border);
+}
+
+.roadmap-step {
+    position: relative;
+    margin-bottom: var(--space-xl);
+    border: var(--border-width) solid var(--border);
+    background: var(--surface);
+}
+
+.roadmap-step:last-child {
+    margin-bottom: 0;
+}
+
+.roadmap-marker {
+    position: absolute;
+    left: -52px;
+    top: var(--space-md);
+    width: 24px;
+    height: 24px;
+    border: var(--border-width) solid var(--border);
+    background: var(--surface);
+}
+
+.roadmap-content {
+    padding: var(--space-lg);
+}
+
+.roadmap-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+}
+
+.roadmap-content ul {
+    margin-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+}
+
+.roadmap-status {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+}
+
+/* Etats roadmap et principes */
+.roadmap-step.done, .principle.done {
+    background: oklch(95% 0.05 var(--hue-vert));
+}
+.roadmap-step.done .roadmap-marker {
+    background: oklch(60% 0.15 var(--hue-vert));
+}
+
+.roadmap-step.current, .principle.current {
+    background: oklch(95% 0.05 var(--hue-indigo));
+    animation: blink 2s infinite;
+}
+.roadmap-step.current .roadmap-marker {
+    background: oklch(65% 0.18 var(--hue-indigo));
+}
+
+.roadmap-step.future, .principle.future {
+    opacity: 0.7;
+}
+.roadmap-step.future .roadmap-marker {
+    background: var(--color-muted);
+}
+
+@media (max-width: 600px) {
+    .roadmap-timeline {
+        padding-left: 45px;
+    }
+    .roadmap-marker {
+        left: -38px;
+    }
+}
+
+/* ─── Glossaire ─────────────────────────────────────────────────────── */
+dt {
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm);
+    background: var(--surface);
+    border-left: var(--border-width) solid var(--color-primary);
+}
+
+dd {
+    margin-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+}
+
+dd strong {
+    color: var(--color-primary);
+}
+
+dl > dt:first-child {
+    margin-top: 0;
 }

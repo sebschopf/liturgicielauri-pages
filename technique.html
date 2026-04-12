@@ -17,7 +17,7 @@
         <a href="utilisateur.html">Dossier Utilisateur</a>
         <a href="technique.html">Dossier Technique</a>
         <a href="financier.html">Dossier Financier</a>
-        <a href="annexes.html">Annexes</a>
+        <a href="glossaire.html">Glossaire Référence</a>
     </nav>
     
     <main class="container">
@@ -38,14 +38,86 @@
             <p>Plus de 75 ADR (Architectural Decision Records) documentent chaque choix technique pour assurer la pérennité.</p>
         </section>
 
-        <section>
-            <h2>Roadmap</h2>
-            <ul>
-                <li><strong>Phase 1 & 2</strong> : Fondations, consultation et recherche (Terminé).</li>
-                <li><strong>Phase 3</strong> : Édition et gestion de contenu (En cours).</li>
-                <li><strong>Phase 4</strong> : Synchronisation asynchrone (Q3 2026).</li>
-                <li><strong>Phase 5</strong> : Impression PDF, i18n, packaging final (Q4 2026).</li>
-            </ul>
+        <section id="roadmap">
+            <h2>Feuille de Route Détaillée</h2>
+            
+            <p style="margin-bottom: 2rem;">
+                Avancement global du projet : <strong>62 %</strong> vers la version 2.0 finale
+            </p>
+
+            <div class="roadmap-timeline">
+                <div class="roadmap-step done">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>PHASE 1</h3>
+                        <ul>
+                            <li><strong>Architecture</strong> : Mise en place Tauri + SurrealDB embarqué. Aucun serveur externe requis. Légère, améliorable, adaptative, agréable.</li>
+                            <li><strong>Sécurité</strong> : Authentification locale, chiffrement des données à la volée. Garantit la confidentialité absolue selon les principes de la liberté de culte : vos données ne sortent jamais de votre ordinateur.</li>
+                            <li><strong>CI/CD</strong> : Pipeline de compilation automatique pour Windows, Linux et macOS. Même qualité sur tous les systèmes.</li>
+                        </ul>
+                        <p class="roadmap-status">Terminé Fevrier 2026</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step done">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>PHASE 2</h3>
+                        <ul>
+                            <li><strong>Consultation</strong> : Mode Livre, navigation dans le corpus selon l'ordre canonique. Lecture respectueuse de la structure liturgique, sans distraction.</li>
+                            <li><strong>Recherche</strong> : Moteur plein texte avec filtres et facettes. Trouver ce que vous cherchez en moins d'une seconde.</li>
+                            <li><strong>Tableau de bord</strong> : Statistiques, favoris, accès rapides. Votre espace de travail personnalisé.</li>
+                        </ul>
+                        <p class="roadmap-status">Terminé Mars 2026</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step done">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>PHASE 3</h3>
+                        <ul>
+                            <li><strong>Éditeur ProseMirror</strong> : Éditeur riche avec nodes liturgiques customisés. Respecte la structure des textes, ne fait pas de formatage sauvage.</li>
+                            <li><strong>Workflow Publication</strong> : Cycle de vie Brouillon → Révision → Publié. Travaillez tranquillement, publiez quand c'est prêt.</li>
+                            <li><strong>Variantes</strong> : Dupliquer et adapter une fiche existante. Pas besoin de réécrire 3 fois la même chose.</li>
+                            <li><strong>Déroulés de Culte</strong> : Assembler des fiches pour créer un office complet. Construisez votre célébration en 5 minutes.</li>
+                        </ul>
+                        <p class="roadmap-status">Terminé Avril 2026</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step current">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>PHASE 3.5 : CONSOLIDATION</h3>
+                        <ul>
+                            <li><strong>Administration</strong> : Portail et gestion des rôles. Pour les communautés qui travaillent à plusieurs.</li>
+                            <li><strong>Navigation continue</strong> : Fiches précédente / suivante. Lisez comme un livre, pas comme un site web.</li>
+                            <li><strong>Navigation recherche</strong> : Ouvrir directement depuis les résultats, conserver votre position.</li>
+                            <li><strong>Stabilisation</strong> : Nettoyage, corrections, tests. Rien de neuf, rien ne casse.</li>
+                        </ul>
+                        <p class="roadmap-status">En cours - Semaine 15 2026</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step future">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>PHASE 4 : SYNCHRONISATION</h3>
+                        <p>Travaillez sur votre ordinateur de la paroisse, sur votre portable à la maison, vos données suivent. Pas de cloud, pas de surveillance, juste vous et vos fichiers. Export/import de profil complet, sauvegardes automatiques incrémentielles.</p>
+                        <p class="roadmap-status">Prévu Semaine 17</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step future">
+                    <div class="roadmap-marker"></div>
+                    <div class="roadmap-content">
+                        <h3>PHASE 5 : RELEASE</h3>
+                        <p>Impression PDF haute fidélité exactement comme sur écran. Support multilingue. Campagne de tests bêta avec les communautés. Packaging signé et publication officielle v2.0.</p>
+                        <p class="roadmap-status">Prévu Semaine 20</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

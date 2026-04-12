@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossaire Référence — LiturgiCielauri</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>
+        <h1>Glossaire Référence</h1>
+        <p class="subtitle">Comprendre les termes techniques</p>
+    </header>
+    
+    <nav class="main-nav">
+        <a href="index.html">Accueil</a>
+        <a href="utilisateur.html">Dossier Utilisateur</a>
+        <a href="technique.html">Dossier Technique</a>
+        <a href="financier.html">Dossier Financier</a>
+        <a href="glossaire.html">Glossaire Référence</a>
+    </nav>
+    
+    <main class="container">
+        <section>
+            <h2>Glossaire Technique Pédagogique</h2>
+            
+            <p>Ce glossaire explique simplement tous les termes utilisés dans ce projet. Il n'y a aucun prérequis technique pour comprendre ce qui suit.</p>
+
+            <dl style="margin-top: 2rem;">
+                <dt><strong>ADR</strong></dt>
+                <dd>
+                    <strong>Architectural Decision Record</strong><br>
+                    Document officiel qui explique : Pourquoi on a pris cette décision, quelles alternatives on a étudié, quel est le compromis accepté. Chaque choix important du projet est tracé et justifié. Il y en a plus de 75 aujourd'hui.
+                </dd>
+
+                <dt><strong>Local-First</strong></dt>
+                <dd>
+                    Philosophie d'architecture. Vos données restent <strong>toujours</strong> sur votre ordinateur. Il n'y a aucun serveur obligatoire, aucun compte à créer, aucune connexion internet requise. Vous êtes seul propriétaire de vos données.
+                </dd>
+
+                <dt><strong>Rust</strong></dt>
+                <dd>
+                    Langage de programmation moderne. Connu pour être extrêmement sûr, rapide et stable. Élimine 90% des bugs classiques des autres langages. C'est la raison pour laquelle l'application ne pèse que 10 Mo.
+                </dd>
+
+                <dt><strong>Tauri 2.0</strong></dt>
+                <dd>
+                    Outil qui permet de transformer une interface web en application desktop native. Remplace Electron. Consomme 10x moins de mémoire et est 2x plus rapide.
+                </dd>
+
+                <dt><strong>Svelte 5</strong></dt>
+                <dd>
+                    Framework frontend. Celui qui fait que l'interface réagit instantanément lorsque vous cliquez. L'un des plus rapides et des plus simples qui existe aujourd'hui.
+                </dd>
+
+                <dt><strong>SurrealDB</strong></dt>
+                <dd>
+                    Base de données embarquée. C'est la boite qui range toutes vos fiches. Elle fonctionne directement sur votre ordinateur, pas besoin de serveur.
+                </dd>
+
+                <dt><strong>Sidecar</strong></dt>
+                <dd>
+                    Processus qui accompagne l'application principale. Comme un assistant privé. Dans notre cas c'est SurrealDB qui tourne en arrière plan.
+                </dd>
+
+                <dt><strong>ProseMirror</strong></dt>
+                <dd>
+                    Éditeur de texte riche. Le meilleur outil existant pour construire des éditeurs personnalisés. C'est celui qui est derrière les éditeurs de Notion, Atlassian et Wordpress.
+                </dd>
+
+                <dt><strong>CI/CD Pipeline</strong></dt>
+                <dd>
+                    Robot qui compile automatiquement l'application pour Windows, Linux et macOS à chaque modification. Garantit que la version que vous utilisez est exactement celle qui est dans le code source.
+                </dd>
+
+                <dt><strong>Compilation</strong></dt>
+                <dd>
+                    L'opération qui transforme le code source écrit par les développeurs en un programme que vous pouvez lancer sur votre ordinateur.
+                </dd>
+
+                <dt><strong>Workflow</strong></dt>
+                <dd>
+                    Cycle de vie. Par exemple pour une fiche : Brouillon → Révision → Publié. Ce sont les règles qui définissent comment les choses progressent.
+                </dd>
+
+                <dt><strong>FileMaker</strong></dt>
+                <dd>
+                    Logiciel propriétaire dans lequel LiturgiCiel 2010 a été développé. Technologie aujourd'hui obsolète et fermée qui empêchait toute évolution.
+                </dd>
+
+                <dt><strong>Tests</strong></dt>
+                <dd>
+                    Petits programmes qui vérifient automatiquement que tout fonctionne comme prévu. Il y en a 109 aujourd'hui qui s'exécutent à chaque modification.
+                </dd>
+
+                <dt><strong>WCAG AAA</strong></dt>
+                <dd>
+                    Norme internationale d'accessibilité. Le plus haut niveau d'exigence. Garantit que le logiciel est utilisable par tout le monde, y compris les personnes en situation de handicap.
+                </dd>
+
+                <dt><strong>Architecture</strong></dt>
+                <dd>
+                    La façon dont on a organisé le code. C'est le plan de construction du logiciel. Une bonne architecture garantit que le projet pourra évoluer pendant 20 ans sans devoir tout réécrire.
+                </dd>
+
+                <dt><strong>Frontend</strong></dt>
+                <dd>
+                    La partie que vous voyez. Tout ce qui est affiché sur votre écran, les boutons, les textes, les couleurs.
+                </dd>
+
+                <dt><strong>Backend</strong></dt>
+                <dd>
+                    La partie invisible qui travaille en arrière plan. Qui lit et écrit les données, qui fait les calculs, qui vérifie les permissions.
+                </dd>
+
+                <dt><strong>AGPL v3</strong></dt>
+                <dd>
+                    Licence Open-Source. Garantit à jamais que ce logiciel restera gratuit, libre, modifiable et que personne ne pourra jamais l'enfermer dans un système propriétaire.
+                </dd>
+
+                <dt><strong>Javascript</strong></dt>
+                <dd>
+                    Le seul langage que comprend nativement tous les navigateurs web. C'est celui qui est utilisé pour l'interface.
+                </dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>Big Picture</h2>
+            
+            <p>LiturgiCielauri est une application <strong>Offline-First</strong> construite sur <strong>Tauri 2.0</strong>.
+            Elle suit une architecture <strong>SOLID</strong> où le frontend (Svelte 5) communique avec une couche de persistance <strong>SurrealDB</strong> locale.
+            La synchronisation est <strong>asynchrone</strong> et privilégie l'intégrité des données liturgiques.</p>
+        </section>
+
+        <section>
+            <h2>Index des ADR</h2>
+            
+            <p>Les Décisions Architecturales enregistrent tous les choix structurants du projet. Il y en a 75 à ce jour.</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Ceci est une sélection des plus importantes. La totalité des ADR est disponible dans le dépôt de code source.</p>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Fondations</h3>
+            <ul>
+                <li><strong>ADR 001</strong> : Sélection de la Pile Technique</li>
+                <li><strong>ADR 013</strong> : Architecture en Couches</li>
+                <li><strong>ADR 017</strong> : Organisation du Code</li>
+                <li><strong>ADR 031</strong> : Couche de Persistance</li>
+                <li><strong>ADR 066</strong> : Gestion des États avec Svelte 5 Runes</li>
+                <li><strong>ADR 072</strong> : Architecture SurrealDB Sidecar</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Qualité</h3>
+            <ul>
+                <li><strong>ADR 003</strong> : Standards de Développement</li>
+                <li><strong>ADR 005</strong> : Protocole de Tests</li>
+                <li><strong>ADR 011</strong> : Automatisation CI/CD</li>
+                <li><strong>ADR 040</strong> : Stratégie de Tests SOLID</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Interface</h3>
+            <ul>
+                <li><strong>ADR 014</strong> : Accessibilité WCAG AAA</li>
+                <li><strong>ADR 041</strong> : Principes de Design</li>
+                <li><strong>ADR 042</strong> : Système de Couleurs OKLCH</li>
+                <li><strong>ADR 074</strong> : Architecture ProseMirror </li>
+            </ul>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Fonctionnalités</h3>
+            <ul>
+                <li><strong>ADR 033</strong> : Navigation Mode Livre</li>
+                <li><strong>ADR 032</strong> : Workflow d'Édition</li>
+                <li><strong>ADR 054</strong> : Déroulés de Culte</li>
+                <li><strong>ADR 061</strong> : Gestion des Variantes</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LiturgiCielauri</p>
+    </footer>
+</body>
+</html>
